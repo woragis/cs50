@@ -203,3 +203,50 @@ for (variables initialization, boolean exrpession, code to execute every iterati
   code block;
 }
 ```
+
+### Linux Commands
+
+- List Items
+
+```
+$ ls
+```
+
+- Change Directory
+
+```
+$ cd
+$ cd ..
+$ cd ~
+$ cd /
+```
+
+- Copy
+
+```
+$ cp $copy_source $item_copied
+```
+
+- Move or Rename
+
+```
+$ mv item destination
+$ mv item destination/new_name
+$ mv item new_name
+```
+
+- Create and Remove
+
+```
+$ touch item_name
+$ rm item_name
+$ rm -rf dir_name/
+```
+
+- Create or Remove Directories
+
+```
+$ mkdir dir_name
+$ mkdir -p dir_name/subdir_name
+$ rmdir empty_dir/
+```
