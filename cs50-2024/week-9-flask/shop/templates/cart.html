@@ -1,0 +1,14 @@
+{% extends "layout.html" %} {% block body %} {% if name %}
+<h1>You are logged in as {{ name }}</h1>
+<a href="/logout">Log out</a>
+{% else %}
+<h1>You need to login</h1>
+<a href="/login">Log in</a>
+{% endif %}
+<h1>Cart</h1>
+<ol>
+  {% for book in books %}
+  <li>{{ book["book_name"] }}</li>
+  {% endfor %}
+</ol>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block body %}
+{% if name %}
+  <h1>You are logged in as {{ name }}</h1>
+  <a href="/logout">Log out</a>
+{% else %}
+  <h1>You need to login</h1>
+  <a href="/login">Log in</a>
+{% endif %}
+<h1>Greetings Test</h1>
+<form action="/" method="post">
+  <input autocomplete="off" type="text" name="name" value="" placeholder="John Doe" autofocus />
+  <button type="submit">Greet</button>
+</form>
+<hr />
+<h1>Register</h1>
+<form action="/register" method="post">
+  <input required autocomplete="off" type="text" name="name" value="" placeholder="John Doe" autofocus />
+  <select name="sport">
+    <option disabled selected value="">Sport</option>
+    {% for sport in sports %}
+      <option value={{sport}}>{{sport}}</option>
+    {% endfor %}
+    {% for fruit in fruits %}
+    <label for={{fruit}}>{{fruit}}</label>
+    <input type="checkbox" value={{fruit}}>
+    {% endfor %}
+  </select>
+  <button type="submit">Register</button>
+</form>
+{% endblock %}

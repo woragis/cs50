@@ -1,0 +1,18 @@
+{% extends "layout.html" %} {% block body %}
+{% if name %}
+  <h1>You are logged in as {{ name }}</h1>
+  <a href="/logout">Log out</a>
+{% else %}
+  <h1>You need to login</h1>
+  <a href="/login">Log in</a>
+{% endif %}
+<h1>Books</h1>
+{% for book in books %}
+<h3>{{ book["book_name"] }}</h3>
+<p>{{ book["author"] }}</p>
+<form action="cart" method="post">
+  <input type="hidden" value="{{ book["book_id"] }}" name="{{ book["book_id"] }}">
+  <button type="submit">Add to Cart</button>
+</form>
+{% endfor %}
+{% endblock %}
